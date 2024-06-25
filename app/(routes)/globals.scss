@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .row {
+    @apply grid grid-cols-12;
+  }
+  .section-pad {
+    @apply py-4 md:py-8 3xl:py-10;
+  }
+  .page-title {
+    @apply text-main-dark font-bold text-xl md:text-2xl lg:text-3xl 3xl:text-4xl;
+    span {
+      @apply text-main-color;
+    }
+  }
+  .vesrion-card {
+    @apply bg-white rounded-xl py-6 md:py-8 lg:py-10 3xl:py-12 w-full my-3 md:my-4 overflow-hidden relative before:w-2 before:md:w-4;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: #2ebdb9;
+    }
+  }
+  .delete-btn,
+  .main-btn {
+    @apply text-xs md:text-base 3xl:text-xl rounded-xl md:rounded-2xl py-2 md:py-3 md:px-7 font-semibold transition-all outline-none;
+  }
+  .main-btn {
+    @apply text-white  bg-main-color rounded-xl md:rounded-2xl px-5 md:px-7 hover:bg-[#229C99];
+  }
+  .delete-btn {
+    @apply text-red-700 flex items-center border-2 border-red-700 px-3 md:px-5;
+  }
+  .special-scrollbar {
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      -webkit-border-radius: 100vh;
+      -moz-border-radius: 100vh;
+      -ms-border-radius: 100vh;
+      -o-border-radius: 100vh;
+      border-radius: 100vh;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(46 189 185);
+      -webkit-border-radius: 100vh;
+      -moz-border-radius: 100vh;
+      -ms-border-radius: 100vh;
+      -o-border-radius: 100vh;
+      border-radius: 100vh;
+    }
+  }
+
+  //forms style
+  .input-container {
+    @apply flex flex-col;
+  }
+  .label {
+    @apply font-medium text-dark-gray mb-2 text-sm md:text-base 3xl:text-xl;
+  }
+  .add-input,
+  .edit-input {
+    @apply w-full py-1 px-2 md:py-2 md:px-3 rounded-md outline-none;
+    &.input-error {
+      @apply border-red-700;
+    }
+  }
+  .add-input {
+    @apply bg-[#ECECEC] border-2 border-[#D3D3D3] text-sm md:text-base 3xl:text-xl;
+  }
+  .edit-input {
+    @apply border-b-2 border-b-[#ACACAC] outline-none text-sm md:text-base;
+  }
+  .error {
+    @apply text-xs md:text-sm mt-1 text-red-700;
+  }
+}
+
+//hightcahrts library
+.highcharts-credits {
+  display: none;
+}
